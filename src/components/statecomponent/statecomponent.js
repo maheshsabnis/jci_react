@@ -20,9 +20,14 @@ const StateComponent=()=>{
 
 
     const products = [
-        {id:101,name:'P1'},
-        {id:102,name:'P2'},
-        {id:103,name:'P3'}
+        {id:101,name:'P1', catname:'c1'},
+        {id:102,name:'P2', catname:'c2'},
+        {id:103,name:'P3', catname:'c3'}
+    ];
+
+    const emps = [
+        {eno:1,ename:'A'},
+        {eno:2,ename:'B'},
     ];
 
 
@@ -95,7 +100,9 @@ const StateComponent=()=>{
                 <SelectComponent dataSource={degrees}></SelectComponent>
             </div>
             <hr/>
-            <DataGridComponent dataSource={products}></DataGridComponent>
+            <DataGridComponent dataSource={products} CanDelete={true}></DataGridComponent>
+            <hr/>
+            <DataGridComponent dataSource={emps}></DataGridComponent>
         </div>
     );
 };

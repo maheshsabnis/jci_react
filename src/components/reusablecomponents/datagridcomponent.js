@@ -1,24 +1,31 @@
 import React from 'react'
 
-export default function DataGridComponent() {
+export default function DataGridComponent(props) {
+  let headers = Object.keys(props.dataSource[0]);  
   return (
     <div>
       <table>
         <thead>
             <tr>
-                <th>id</th>
-                <th>name</th>
+               {
+                 headers.map((h,i)=>(
+                    <th>{h}</th>
+                 ))
+                }
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>101</td>
-                <td>P1</td>
-            </tr>
-            <tr>
-                <td>102</td>
-                <td>P2</td>
-            </tr>
+           {
+             props.dataSource.map((rec,idx)=>(
+                <tr key={idx}>
+                    {
+                        headers.map((h,i)=>(
+                            <td key={i}>{rec[h]}</td>
+                         ))
+                    }
+                </tr>
+             ))
+           }
         </tbody>
       </table>
     </div>
