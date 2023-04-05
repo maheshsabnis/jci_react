@@ -77,3 +77,12 @@
                 - useContext()
                 - useEffect()
             - Reusability                      
+
+# Component Practices
+- FInd out reoeated UI requirements
+- If they occurr acros various components then think to create a custom re-usable component
+    - Plan for UI
+    - Manage the type of data that is to be oassed to this re-usable component
+        - a Single value
+        - a collection
+    - Plan for establishing data communication from the re-usable component to its parent                      
