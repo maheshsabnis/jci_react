@@ -55,7 +55,25 @@
                     - Hook for defining the Component's Local state
                     - const [x,setX] = useState(0);
                         - x, is the state property for component
+                            - default is 0
                         - setX is DispatchAction object of React that will update value of 'x' based on DOM Events
+                    - Binding State with UI element
+                        - <ELEMENT ATTRIBUTE={STATE-PROPERTY} EVENT={DISPATCH-ACTION-TO-UPDATE-STATE-PROPERTY}/>
+                            -  ELEMENT: HTML element e.g. input
+                            -  ATTRIBUTE: an attribute of HTML element that acepts the value
+                            -  STATE-PROPERTY: Lcoal state property defined for the Component using 'useState'
+                            -   EVEN: an event of HTML element that causes the value to change
+                            - DISPATCH-ACTION-TO-UPDATE-STATE-PROPERTY: the Dispatch Action defined in 'useState' that will update the state property value
+    - e.g.
+```` javascript
+    const [x,setX] = useState(0);
+
+    return(
+       <input type="text" value={x} onChange={(evt)=>setX(evt.target.value)}>
+    );
+````
+    - ELEMENT: input, ATTRIBUTE: value, PROPERTY-NAME: x, EVENT:onchange, DISPATCH-ACTION-TO-UPDATE-STATE-PROPERTY: setX
+
                 - useContext()
                 - useEffect()
             - Reusability                      

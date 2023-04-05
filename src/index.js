@@ -8,16 +8,23 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
   .e.g Components, Logic Objects, Utilities, etc.
 */
 import App from './App';
-
+import StateComponent from './components/statecomponent/statecomponent';
 import reportWebVitals from './reportWebVitals';
 /* This will localte a HTML element having id as 'root' from index.html
  and in this HTML element the React Component will be MOUNTED 
 */
+
+const msg = "I am from Parent";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 /* MOUNT the Component and show the HTML of the Component on UI Thread */
 root.render(
   <React.StrictMode>
-    <App />
+    {/* App component with 'props' having 'message' property 
+      bind the 'msg' to 'newmsg' props type
+    */}
+    {/* <App message={'Hello World!'} newmsg={msg}/> */}
+    <StateComponent></StateComponent>
   </React.StrictMode>
 );
 
