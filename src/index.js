@@ -10,7 +10,9 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import StateComponent from './components/statecomponent/statecomponent';
 import ParentComponent from './components/communication/parentcomponent';
+import StateChangeComponent from './components/samplestatechangecomponent/statechangecomponent';
 import reportWebVitals from './reportWebVitals';
+import UseEffectAjaxComponent from './components/ajaxcomponent/useeffectajaxcomponent';
 /* This will localte a HTML element having id as 'root' from index.html
  and in this HTML element the React Component will be MOUNTED 
 */
@@ -25,7 +27,8 @@ root.render(
       bind the 'msg' to 'newmsg' props type
     */}
     {/* <App message={'Hello World!'} newmsg={msg}/> */}
-    <ParentComponent></ParentComponent>
+    <UseEffectAjaxComponent></UseEffectAjaxComponent>
+
   </React.StrictMode>
 );
 

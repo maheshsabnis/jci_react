@@ -10,11 +10,18 @@ const StateComponent=()=>{
     const [fullName, setFullName] = useState('');
     const [occupation, setOccupation] = useState('');
     const [education, setEducation] = useState('');
+    const [selValue, setSelValue] = useState('');
+    const [rowData, setRowData] = useState('');
+    const occupations = ['Service', 'Self-Service', 'Business', 'Freelancer', 'Designer'];
 
-    // const occupations = ['Service', 'Self-Service', 'Business', 'Freelancer', 'Designer'];
-
-    const occupations = undefined;
+    const getSelectedDataFromChild=(v)=>{
+        setSelValue(v);
+    }  
     
+    const getSelectedRowData=(row)=>{
+        setRowData(JSON.stringify(row));
+    };
+
 
     const degrees = ['B.E.', 'B.Tech', 'B.Sc.', 'M.Sc'];
 
@@ -40,6 +47,7 @@ const StateComponent=()=>{
     
     return(
         <div className="container">
+            <h1>Hay guys I am Parent Completed Please Listen</h1>
             <div className="form-group">
                 <label>First Name</label>
                 <input type="text" className="form-control"
@@ -93,14 +101,22 @@ const StateComponent=()=>{
             <h5>Using Re-Usable SelectComponent</h5>
             <div>
             Select Occupations: 
-                <SelectComponent dataSource={occupations}></SelectComponent> 
-             
+                <SelectComponent dataSource={occupations}
+                 selectedValue={getSelectedDataFromChild}
+                ></SelectComponent> 
+             <hr/>
+               Selected Occupation : {selValue}
                 <hr/>
                 Select Degree:
                 <SelectComponent dataSource={degrees}></SelectComponent>
             </div>
             <hr/>
-            <DataGridComponent dataSource={products} CanDelete={true}></DataGridComponent>
+             Selected Row Data Reveceived from DataGrid:
+              {rowData}
+            <br/>
+            <DataGridComponent dataSource={products} CanDelete={true}
+             selectedRow={getSelectedRowData}
+            ></DataGridComponent>
             <hr/>
             <DataGridComponent dataSource={emps}></DataGridComponent>
         </div>
