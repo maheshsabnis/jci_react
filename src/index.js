@@ -9,6 +9,7 @@ import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 */
 import App from './App';
 import StateComponent from './components/statecomponent/statecomponent';
+import ParentComponent from './components/communication/parentcomponent';
 import reportWebVitals from './reportWebVitals';
 /* This will localte a HTML element having id as 'root' from index.html
  and in this HTML element the React Component will be MOUNTED 
@@ -24,7 +25,7 @@ root.render(
       bind the 'msg' to 'newmsg' props type
     */}
     {/* <App message={'Hello World!'} newmsg={msg}/> */}
-    <StateComponent></StateComponent>
+    <ParentComponent></ParentComponent>
   </React.StrictMode>
 );
 
