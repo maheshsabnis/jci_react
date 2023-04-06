@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function DataGridComponent(props) {
-  let headers = Object.keys(props.dataSource[0]);  
+  let headers;
   const rowClick=(row)=>{
    // alert(`Selected Row = ${JSON.stringify(row)}`);
    // Pass the Selected row value from Table to
@@ -9,7 +9,10 @@ export default function DataGridComponent(props) {
    // onClick event
    props.selectedRow(row);
   };
-  return (
+  if(props.dataSource === undefined || props.dataSource.length === 0)
+    return <>No Data</>
+  else {
+    headers = Object.keys(props.dataSource[0]);    return (
     <div>
       <h3>I am a DataGrid Chomponent I am Child</h3>
       <table className='table table-bordered table-striped'>
@@ -38,4 +41,5 @@ export default function DataGridComponent(props) {
       </table>
     </div>
   )
+          }
 }
