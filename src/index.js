@@ -13,6 +13,7 @@ import ParentComponent from './components/communication/parentcomponent';
 import StateChangeComponent from './components/samplestatechangecomponent/statechangecomponent';
 import reportWebVitals from './reportWebVitals';
 import UseEffectAjaxComponent from './components/ajaxcomponent/useeffectajaxcomponent';
+import ProviderComponent from './components/withcontext/providercomponent';
 /* This will localte a HTML element having id as 'root' from index.html
  and in this HTML element the React Component will be MOUNTED 
 */
@@ -27,8 +28,7 @@ root.render(
       bind the 'msg' to 'newmsg' props type
     */}
     {/* <App message={'Hello World!'} newmsg={msg}/> */}
-    <UseEffectAjaxComponent></UseEffectAjaxComponent>
-
+    <ProviderComponent></ProviderComponent>
   </React.StrictMode>
 );
 
