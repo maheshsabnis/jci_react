@@ -10,7 +10,10 @@ const SelectComponent=(props)=>{
     if(props.dataSource !== undefined ) {
         return (
             <div className="container">
-               <select className="form-control" onChange={emitSelectedValue}>
+               <select className="form-control" 
+                value={props.bindableProperty}
+               onChange={emitSelectedValue}>
+                <option>Select Value</option>
                 {
                     props.dataSource.map((rec,idx)=>(
                         <option key={idx} value={rec}>{rec}</option>

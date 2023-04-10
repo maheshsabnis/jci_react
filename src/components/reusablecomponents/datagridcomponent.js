@@ -12,7 +12,8 @@ export default function DataGridComponent(props) {
   if(props.dataSource === undefined || props.dataSource.length === 0)
     return <>No Data</>
   else {
-    headers = Object.keys(props.dataSource[0]);    return (
+    headers = Object.keys(props.dataSource[0]);   
+     return (
     <div>
       <h3>I am a DataGrid Chomponent I am Child</h3>
       <table className='table table-bordered table-striped'>
